@@ -1,6 +1,6 @@
 {
   "name": "@ungap/custom-elements-new",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An utility to simplify Custom Elements instantiation for every browser",
   "main": "cjs/index.js",
   "module": "esm/index.js",
