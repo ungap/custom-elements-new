@@ -1,13 +1,12 @@
 /*! (c) Andrea Giammarchi - ISC */
-(function (document, customElements, property) {
-  var hOP = {}.hasOwnProperty;
+(function (document, customElements, property, hOP) {
   var $define = customElements.define;
   property(customElements, 'define', {
     configurable: true,
     value: function define(
-      name,
-      Class,
-      options
+      name,   // the Custom Element tag name
+      Class,  // the HTMLElement/BuiltIn extends
+      options // optional object with {extends: 'built-in-tag-name'}
     ) {
       var result = $define.apply(this, arguments);
       if (!hOP.call(Class, 'new')) {
@@ -36,5 +35,6 @@
 }(
   document,
   customElements,
-  Object.defineProperty
+  Object.defineProperty,
+  {}.hasOwnProperty
 ));
